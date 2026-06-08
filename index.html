@@ -72,8 +72,25 @@ border-bottom:1px solid #444;
 <div class="caixa">
 <h2>⏳ Contagem Regressiva</h2>
 <div class="contador">
-  <div>9d 0h 00m</div>
+    <div id="contador">9d 0h 00m</div>
 </div>
+
+<script>
+let tempo = 9 * 24 * 60 * 60;
+
+setInterval(function(){
+    let dias = Math.floor(tempo / 86400);
+    let horas = Math.floor((tempo % 86400) / 3600);
+    let minutos = Math.floor((tempo % 3600) / 60);
+
+    document.getElementById("contador").innerHTML =
+    dias + "d " + horas + "h " + minutos + "m";
+
+    if(tempo > 0){
+        tempo--;
+    }
+}, 1000);
+</script>
 </div>
 </div>
 
