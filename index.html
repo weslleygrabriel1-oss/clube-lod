@@ -3,25 +3,14 @@
 <head>
 <title>⚠️ META DOS 200 MIL</title>
 <style>
-body{
-background:#111;
-color:white;
-font-family:Arial;
-text-align:center;
-}
-.caixa{
-background:#222;
-padding:20px;
-margin:20px auto;
-width:80%;
-border-radius:15px;
-}
-h1{
-color:gold;
-}
+body{background:#0b0b0b;color:white;font-family:Arial;text-align:center;margin:0;padding:20px}
+.caixa{background:#202020;padding:25px;margin:20px auto;width:80%;border-radius:15px}
+h1{color:gold}
+.contador{font-size:50px;color:#00c8ff;font-weight:bold}
+table{width:100%;color:white;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid #444}
 </style>
 </head>
-
 <body>
 
 <h1>⚠️ META DOS 200 MIL ⚠️</h1>
@@ -29,11 +18,13 @@ color:gold;
 <div class="caixa">
 <h2>🏆 Clube LOD</h2>
 <p>Meta mínima: <b>200.000 pontos</b></p>
+<p>Quem não cumprir poderá ser removido do clube.</p>
 </div>
 
 <div class="caixa">
 <h2>⏳ Contagem Regressiva</h2>
-<h1 id="contador">05:00:00</h1>
+<div class="contador">9d 0h 00m</div>
+<p>Tempo restante para o fim da temporada</p>
 </div>
 
 <div class="caixa">
@@ -42,28 +33,20 @@ color:gold;
 </div>
 
 <div class="caixa">
-<h2>🏅 Ranking</h2>
-<p>Carlo - 112.665</p>
-<p>Insano - 107.820</p>
-<p>Kompany - 103.584</p>
+<h2>🏅 Ranking temporada passada</h2>
+<table>
+<tr>
+<th>Posição</th>
+<th>Jogador</th>
+<th>Status</th>
+</tr>
+<tr>
+<td>🥇 1º</td>
+<td>weslley</td>
+<td>👑 Campeão</td>
+</tr>
+</table>
 </div>
-
-<script>
-let tempo = 18000;
-
-setInterval(()=>{
-let h = Math.floor(tempo/3600);
-let m = Math.floor((tempo%3600)/60);
-let s = tempo%60;
-
-document.getElementById("contador").innerHTML =
-String(h).padStart(2,'0')+":"+
-String(m).padStart(2,'0')+":"+
-String(s).padStart(2,'0');
-
-if(tempo>0) tempo--;
-},1000);
-</script>
 
 </body>
 </html>
