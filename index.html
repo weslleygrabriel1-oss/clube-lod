@@ -1,28 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>⚠️ META DOS 200 MIL</title>
+<title>⚠️ META DOS 200 MIL</title>
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+.caixa{
+background:#222;
+padding:20px;
+margin:20px auto;
+width:80%;
+border-radius:15px;
+}
+h1{
+color:gold;
+}
+</style>
 </head>
-<body style="font-family:Arial;text-align:center;background:#111;color:white;">
 
-    <h1>⚠️ META DOS 200 MIL ⚠️</h1>
+<body>
 
-    <h2>🏆 Clube LOD</h2>
+<h1>⚠️ META DOS 200 MIL ⚠️</h1>
 
-    <p>
-        Os jogadores abaixo têm prazo para atingir
-        <b>200.000 pontos</b>.
-    </p>
+<div class="caixa">
+<h2>🏆 Clube LOD</h2>
+<p>Meta mínima: <b>200.000 pontos</b></p>
+</div>
 
-    <p>
-        Quem não cumprir a meta poderá ser removido do clube.
-    </p>
+<div class="caixa">
+<h2>⏳ Contagem Regressiva</h2>
+<h1 id="contador">05:00:00</h1>
+</div>
 
-    <hr>
+<div class="caixa">
+<h2>📢 Avisos do ADM</h2>
+<p>Nenhum aviso no momento.</p>
+</div>
 
-    <h2>📢 Avisos do ADM</h2>
+<div class="caixa">
+<h2>🏅 Ranking</h2>
+<p>Carlo - 112.665</p>
+<p>Insano - 107.820</p>
+<p>Kompany - 103.584</p>
+</div>
 
-    <p>Nenhum aviso no momento.</p>
+<script>
+let tempo = 18000;
+
+setInterval(()=>{
+let h = Math.floor(tempo/3600);
+let m = Math.floor((tempo%3600)/60);
+let s = tempo%60;
+
+document.getElementById("contador").innerHTML =
+String(h).padStart(2,'0')+":"+
+String(m).padStart(2,'0')+":"+
+String(s).padStart(2,'0');
+
+if(tempo>0) tempo--;
+},1000);
+</script>
 
 </body>
 </html>
