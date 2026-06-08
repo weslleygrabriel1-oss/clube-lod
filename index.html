@@ -38,6 +38,19 @@ text-shadow:0 0 10px gold;
 font-size:40px;
 font-weight:bold;
 color:#00e5ff;
+text-shadow:0 0 10px #00e5ff;
+}
+
+button{
+background:#7d2cff;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:15px;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 0 15px #7d2cff;
+cursor:pointer;
 }
 
 table{
@@ -64,6 +77,15 @@ border-bottom:1px solid #444;
 <h1>⚠️ META DOS 200 MIL ⚠️</h1>
 
 <div class="caixa">
+<h2>🎵 Música do Clube</h2>
+<button onclick="document.getElementById('musica').play()">🎵 Tocar Música</button>
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+<p>Envie uma música chamada <b>musica.mp3</b> no GitHub.</p>
+</div>
+
+<div class="caixa">
 <h2>🏆 Clube LOD</h2>
 <p>Meta mínima: <b>200.000 pontos</b></p>
 <p>Quem não cumprir poderá ser removido do clube.</p>
@@ -71,12 +93,32 @@ border-bottom:1px solid #444;
 
 <div class="caixa">
 <h2>⏳ Contagem Regressiva</h2>
-<div class="contador">
-    <div id="contador">9d 0h 00m</div>
+<div id="contador" class="contador">Carregando...</div>
+</div>
+
+<div class="caixa">
+<h2>📢 Avisos do ADM</h2>
+<p>Nenhum aviso no momento.</p>
+</div>
+
+<div class="caixa">
+<h2>🏅 Ranking Temporada Passada</h2>
+<table>
+<tr>
+<th>Posição</th>
+<th>Jogador</th>
+<th>Título</th>
+</tr>
+<tr>
+<td>🥇</td>
+<td>Weslley</td>
+<td>👑 Campeão</td>
+</tr>
+</table>
 </div>
 
 <script>
-const dataFinal = new Date("2026-06-17T00:00:00").getTime();
+const dataFinal = new Date("2026-06-17T20:00:00").getTime();
 
 setInterval(function(){
     const agora = new Date().getTime();
@@ -90,38 +132,12 @@ setInterval(function(){
     const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
     document.getElementById("contador").innerHTML =
     dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
 }, 1000);
 </script>
-</div>
-</div>
-
-<div class="caixa">
-<h2>📢 Avisos do ADM</h2>
-<p>Nenhum aviso no momento.</p>
-</div>
-
-<div class="caixa">
-<h2>🏅 Ranking Temporada Passada</h2>
-
-<table>
-<tr>
-<th>Posição</th>
-<th>Jogador</th>
-<th>Título</th>
-</tr>
-
-<tr>
-<td>🥇</td>
-<td>Weslley</td>
-<td>👑 Campeão</td>
-</tr>
-
-</table>
-
-</div>
 
 </body>
 </html>
